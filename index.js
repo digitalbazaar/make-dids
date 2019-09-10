@@ -37,7 +37,7 @@ async function getDid({did, v1}) {
   let remote;
   while(!remote) {
     try {
-      remote = await v1.getRemote({did});
+      remote = await v1.get({did});
     } catch(e) {
       if(e.name !== 'NotFoundError') {
         throw e;
@@ -45,7 +45,7 @@ async function getDid({did, v1}) {
       await delay(10000);
     }
   }
-  if(!remote.found) {
+  if(remote.doc.id !== did) {
     throw new Error(`DID not found ${did}`);
   }
   console.log(`Found ${did}`);
@@ -53,7 +53,7 @@ async function getDid({did, v1}) {
 
 async function generateDid(v1) {
   const didDocument = await v1.generate();
-  v1.register({didDocument});
+  await v1.register({didDocument});
   return didDocument.id;
 }
 
