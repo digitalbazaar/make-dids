@@ -7,13 +7,10 @@ const delay = require('delay');
 const {VeresOne} = require('did-veres-one');
 
 const peers = [
-  'genesis.bee.veres.one',
-  'alturas.bee.veres.one',
-  'saopaulo.bee.veres.one',
-  'frankfurt.bee.veres.one',
-  'singapore.bee.veres.one',
-  'mumbai.bee.veres.one',
-  'tokyo.bee.veres.one',
+  'vop1.digitalbazaar.com',
+  'vop2.digitalbazaar.com',
+  'vop3.digitalbazaar.com',
+  'vop4.digitalbazaar.com',
 ];
 
 const clients = peers.map(hostname => new VeresOne({hostname, mode: 'test'}));
