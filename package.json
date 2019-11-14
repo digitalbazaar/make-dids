@@ -22,7 +22,7 @@
   "homepage": "https://github.com/digitalbazaar/make-dids",
   "dependencies": {
     "delay": "^4.2.0",
-    "did-veres-one": "^7.0.0"
+    "did-veres-one": "^8.0.0"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
